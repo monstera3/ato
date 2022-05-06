@@ -28,6 +28,7 @@ export const SearchBar=()=> {
           noValidate
           autoComplete="off"
         >
+          {/*TODO: labelを枠内に表示したい */}
           <TextField id="outlined-basic" label="展覧会・美術館・ユーザー検索" variant="outlined"
                      InputProps={{
                        startAdornment: (
