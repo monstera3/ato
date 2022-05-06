@@ -14,7 +14,11 @@ export const FeaturedExhibition=()=> {
   return (
     <div className="App">
 
+
       <Container maxWidth="lg">
+        <Typography gutterBottom variant="h5" component="div">
+          注目の展覧会
+        </Typography>
         <Card sx={{ maxWidth: 345 }}>
           <CardMedia
             component="img"
