@@ -6,9 +6,11 @@ import {
   FormControlLabel, InputAdornment,
   Radio,
   RadioGroup,
-  TextField
+  TextField,
+  Button
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+
 
 
 export const SearchBar=()=> {
@@ -21,7 +23,6 @@ export const SearchBar=()=> {
         <Box
           component="form"
           sx={{
-            display: 'flex', alignItems: 'flex-end',
             '& > :not(style)': { m: 1, width: '25ch'},
           }}
           noValidate
@@ -48,7 +49,7 @@ export const SearchBar=()=> {
             <FormControlLabel value="USER" control={<Radio />} label="ユーザー" />
           </RadioGroup>
         </FormControl>
-
+        <Button variant="contained">検索</Button>
       </Container>
 
     </div>
