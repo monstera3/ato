@@ -1,6 +1,14 @@
 import React from 'react';
 import Container from '@mui/material/Container';
-import { FormControl, FormControlLabel, Radio, RadioGroup } from '@mui/material';
+import {
+  Box,
+  FormControl,
+  FormControlLabel, InputAdornment,
+  Radio,
+  RadioGroup,
+  TextField
+} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 
 export const SearchBar=()=> {
@@ -8,8 +16,27 @@ export const SearchBar=()=> {
     <div className="App">
       <Container
         maxWidth="lg"
-        sx={{ bgcolor: '#cfe8fc', height: '10vh' }}>
-        a
+        sx={{ bgcolor: '#cfe8fc', height: '10vh',display: 'flex', alignItems: 'flex-end' }}>
+
+        <Box
+          component="form"
+          sx={{
+            display: 'flex', alignItems: 'flex-end',
+            '& > :not(style)': { m: 1, width: '25ch'},
+          }}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField id="outlined-basic" label="展覧会・美術館・ユーザー検索" variant="outlined"
+                     InputProps={{
+                       startAdornment: (
+                         <InputAdornment position="start">
+                           <SearchIcon />
+                         </InputAdornment>
+                       ),
+                     }}/>
+        </Box>
+
         <FormControl>
           <RadioGroup
             row
