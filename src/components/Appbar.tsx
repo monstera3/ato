@@ -48,6 +48,7 @@ const ResponsiveAppBar = () => {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            {/*ハンバーガーメニュー*/}
             <IconButton
               size="large"
               aria-label="account of current user"
