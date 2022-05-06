@@ -23,10 +23,8 @@ export const SearchBar=()=> {
         <Box
           component="form"
           sx={{
-            '& > :not(style)': { m: 1, width: '25ch'},
+            '& > :not(style)': { m: 0, width: '50ch'},
           }}
-          noValidate
-          autoComplete="off"
         >
           {/*TODO: labelを枠内に表示したい */}
           <TextField id="outlined-basic" label="展覧会・美術館・ユーザー検索" variant="outlined"
