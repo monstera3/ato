@@ -2,7 +2,7 @@ import React from 'react';
 import sampleImg from '../assets/images/sample1.png'
 import {
   Button,
-  Card,
+  Card, CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
@@ -24,6 +24,7 @@ export const FeaturedExhibition=()=> {
           注目の展覧会
         </Typography>
         <Card sx={{ maxWidth: 345 }}>
+          <CardActionArea>
           <CardMedia
             component="img"
             height="140"
@@ -41,6 +42,7 @@ export const FeaturedExhibition=()=> {
               開催期間
             </Typography>
           </CardContent>
+            </CardActionArea>
           <CardActions>
             <IconButton aria-label="add to favorites">
               <FavoriteIcon />
