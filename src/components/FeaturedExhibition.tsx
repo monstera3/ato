@@ -13,6 +13,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CreateIcon from '@mui/icons-material/Create';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 
 export const FeaturedExhibition=()=> {
@@ -54,12 +55,9 @@ export const FeaturedExhibition=()=> {
             <Button size="small"><BookmarkBorderIcon/>保存</Button>
           </CardActions>
         </Card>
-        <Button>
-          <Typography gutterBottom variant="subtitle1" component="p">
-            more
-          </Typography>
+        <Button variant="outlined" endIcon={<ArrowRightAltIcon />}>
+          more
         </Button>
-
       </Container>
 
     </div>
