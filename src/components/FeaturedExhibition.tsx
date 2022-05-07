@@ -14,6 +14,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CreateIcon from '@mui/icons-material/Create';
 
+
 export const FeaturedExhibition=()=> {
   return (
     <div className="App">
@@ -53,6 +54,12 @@ export const FeaturedExhibition=()=> {
             <Button size="small"><BookmarkBorderIcon/>保存</Button>
           </CardActions>
         </Card>
+        <Button>
+          <Typography gutterBottom variant="subtitle1" component="p">
+            more
+          </Typography>
+        </Button>
+
       </Container>
 
     </div>
