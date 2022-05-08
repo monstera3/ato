@@ -2,16 +2,21 @@ import React from 'react';
 import './App.css';
 import ResponsiveAppBar from './components/Appbar';
 import { SearchBar } from './components/Search';
-import { FeaturedExhibition } from './components/FeaturedExhibition';
-import {RecentlyReview} from './components/RecentlyReview';
+import { Routes,Route } from "react-router-dom"
+import { ExhibitionList } from './components/ExhibitionList';
+import { MuseumList } from './components/MuseumList';
+import { Home } from './components/Home';
 
 export const App=()=> {
   return (
     <div className="App">
       <ResponsiveAppBar/>
       <SearchBar/>
-      <FeaturedExhibition/>
-      <RecentlyReview />
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="museums" element={<MuseumList />}/>
+        <Route path="exhibitions" element={<ExhibitionList />}/>
+      </Routes>
     </div>
   );
 };
