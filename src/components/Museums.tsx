@@ -1,4 +1,4 @@
-export const MuseumList=()=> {
+export const Museums=()=> {
   return(
     <div>
       MuseumList
