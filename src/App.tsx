@@ -22,7 +22,7 @@ export const App=()=> {
         <Route path="login" element={<Login />}/>
         <Route path="museums">
           <Route index element={<Museums />} />
-          <Route path=":museumID" element={<Museum />}/>
+          <Route path=":museumId" element={<Museum />}/>
         </Route>
         <Route path="users">
           <Route path=":userId" element={<User />}/>
