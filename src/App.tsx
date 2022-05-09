@@ -4,7 +4,7 @@ import ResponsiveAppBar from './components/Appbar';
 import { SearchBar } from './components/Search';
 import { Routes,Route } from "react-router-dom"
 import { ExhibitionList } from './components/ExhibitionList';
-import { Museums } from './components/Museums';
+import { MuseumList } from './components/MuseumList';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Login } from './components/Login';
@@ -21,7 +21,7 @@ export const App=()=> {
         <Route path="about" element={<About />}/>
         <Route path="login" element={<Login />}/>
         <Route path="museums">
-          <Route index element={<Museums />} />
+          <Route index element={<MuseumList />} />
           <Route path=":museumId" element={<Museum />}/>
         </Route>
         <Route path="users">
