@@ -1,33 +1,25 @@
 import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { getUser } from '../data';
+import { getMuseum } from '../../data';
 
-export const UserDetail = () => {
+export const MuseumDetail = () => {
   const params = useParams();
-  const user = getUser(params.userId ? params.userId : '')
+  const museum = getMuseum(parseInt(params.museumId ? params.museumId : '0', 10));
   return (
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div">
-          {user.displayName}
+          {museum.museumName}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {user.id}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {user.comment}
+          {museum.access}
         </Typography>
         <Stack direction="row" spacing={1}>
-          {
-            user.watchedMuseum.map((watchedMovie) => (
-              <Chip label={watchedMovie.museumId} size="small" key={watchedMovie.museumId} />
-            ))
-          }
+          <Chip label={museum.address} size="small" />
         </Stack>
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
       </CardActions>
-    </Card>
-  )
+    </Card>  )
 }

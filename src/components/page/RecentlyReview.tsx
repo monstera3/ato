@@ -1,5 +1,5 @@
 import React from 'react';
-import sampleImg from '../assets/images/sample1.png'
+import sampleImg from '../../assets/images/sample1.png'
 import {
   Avatar,
   Card,

@@ -1,6 +1,6 @@
 import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import MuseumIcon from '@mui/icons-material/Museum'
-import { getMuseums } from '../data';
+import { getMuseums } from '../../data';
 
 export const MuseumList=()=> {
 

@@ -1,15 +1,15 @@
 import React from 'react';
 import './App.css';
-import ResponsiveAppBar from './components/Appbar';
-import { SearchBar } from './components/Search';
+import ResponsiveAppBar from './components/page/Appbar';
+import { SearchBar } from './components/page/Search';
 import { Routes,Route } from "react-router-dom"
-import { ExhibitionList } from './components/ExhibitionList';
-import { MuseumList } from './components/MuseumList';
-import { Home } from './components/Home';
-import { About } from './components/About';
-import { Login } from './components/Login';
-import { MuseumDetail } from './components/MuseumDetail';
-import { UserDetail } from './components/UserDetail';
+import { ExhibitionList } from './components/page/ExhibitionList';
+import { MuseumList } from './components/page/MuseumList';
+import { Home } from './components/page/Home';
+import { About } from './components/page/About';
+import { Login } from './components/page/Login';
+import { MuseumDetail } from './components/page/MuseumDetail';
+import { UserDetail } from './components/page/UserDetail';
 
 export const App=()=> {
   return (
