@@ -8,6 +8,7 @@ import { Museums } from './components/Museums';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Login } from './components/Login';
+import { Museum } from './components/Museum';
 
 export const App=()=> {
   return (
@@ -18,7 +19,9 @@ export const App=()=> {
         <Route path="/" element={<Home />}/>
         <Route path="about" element={<About />}/>
         <Route path="login" element={<Login />}/>
-        <Route path="museums" element={<Museums />}/>
+        <Route path="museums" element={<Museums />}>
+          <Route path=":museumID" element={<Museum />}/>
+        </Route>
         <Route path="exhibitions" element={<ExhibitionList />}/>
       </Routes>
     </div>
