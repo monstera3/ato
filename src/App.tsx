@@ -19,7 +19,8 @@ export const App=()=> {
         <Route path="/" element={<Home />}/>
         <Route path="about" element={<About />}/>
         <Route path="login" element={<Login />}/>
-        <Route path="museums" element={<Museums />}>
+        <Route path="museums">
+          <Route index element={<Museums />} />
           <Route path=":museumID" element={<Museum />}/>
         </Route>
         <Route path="exhibitions" element={<ExhibitionList />}/>
