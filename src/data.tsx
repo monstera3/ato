@@ -30,7 +30,7 @@ export const getMuseums = (): MuseumType[] => {
   return museums;
 }
 
-export const getMovie = (id: number): MuseumType | null => {
+export const getMuseum = (id: number): MuseumType  => {
   const museum = museums.find((museum: MuseumType) => museum.id === id)
-  return museum ? museum : null
+  return museum ? museum : { id: 0, title:'', countries: [],year: 0 }
 }
