@@ -11,7 +11,7 @@ export const Museums=()=> {
       {museums.map((museum)=>(
         <ListItem>
           <ListItemIcon><MuseumIcon/></ListItemIcon>
-          <ListItemText primary={museum.title} secondary={museum.year}/>
+          <ListItemText primary={museum.museumName} secondary={museum.access}/>
         </ListItem>
       ))}
     </List>

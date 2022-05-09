@@ -9,10 +9,10 @@ export const Museum = () => {
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div">
-          {museum.title}
+          {museum.museumName}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {museum.year}
+          {museum.access}
         </Typography>
 
       </CardContent>
