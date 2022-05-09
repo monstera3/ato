@@ -9,7 +9,7 @@ import { Home } from './components/Home';
 import { About } from './components/About';
 import { Login } from './components/Login';
 import { MuseumDetail } from './components/MuseumDetail';
-import { User } from './components/User';
+import { UserDetail } from './components/UserDetail';
 
 export const App=()=> {
   return (
@@ -25,7 +25,7 @@ export const App=()=> {
           <Route path=":museumId" element={<MuseumDetail />}/>
         </Route>
         <Route path="users">
-          <Route path=":userId" element={<User />}/>
+          <Route path=":userId" element={<UserDetail />}/>
         </Route>
         <Route path="exhibitions" element={<ExhibitionList />}/>
       </Routes>

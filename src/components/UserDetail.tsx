@@ -2,7 +2,7 @@ import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from 
 import { useParams } from 'react-router-dom';
 import { getUser } from '../data';
 
-export const User = () => {
+export const UserDetail = () => {
   const params = useParams();
   const user = getUser(params.userId ? params.userId : '')
   return (
