@@ -9,6 +9,7 @@ import { Home } from './components/Home';
 import { About } from './components/About';
 import { Login } from './components/Login';
 import { Museum } from './components/Museum';
+import { User } from './components/User';
 
 export const App=()=> {
   return (
@@ -22,6 +23,9 @@ export const App=()=> {
         <Route path="museums">
           <Route index element={<Museums />} />
           <Route path=":museumID" element={<Museum />}/>
+        </Route>
+        <Route path="users">
+          <Route path=":userId" element={<User />}/>
         </Route>
         <Route path="exhibitions" element={<ExhibitionList />}/>
       </Routes>
