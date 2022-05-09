@@ -2,7 +2,7 @@ import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from 
 import { useParams } from 'react-router-dom';
 import { getMuseum } from '../data';
 
-export const Museum = () => {
+export const MuseumDetail = () => {
   const params = useParams();
   const museum = getMuseum(parseInt(params.museumId ? params.museumId : '0', 10));
   return (

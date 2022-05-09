@@ -8,7 +8,7 @@ import { MuseumList } from './components/MuseumList';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Login } from './components/Login';
-import { Museum } from './components/Museum';
+import { MuseumDetail } from './components/MuseumDetail';
 import { User } from './components/User';
 
 export const App=()=> {
@@ -22,7 +22,7 @@ export const App=()=> {
         <Route path="login" element={<Login />}/>
         <Route path="museums">
           <Route index element={<MuseumList />} />
-          <Route path=":museumId" element={<Museum />}/>
+          <Route path=":museumId" element={<MuseumDetail />}/>
         </Route>
         <Route path="users">
           <Route path=":userId" element={<User />}/>
