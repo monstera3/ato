@@ -24,7 +24,9 @@ export const Review = (props: ReviewType) => {
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div">
-          {getMuseum(props.museumId).museumName}
+          <Link to={'/museums/'+props.museumId}>
+            {getMuseum(props.museumId).museumName}
+          </Link>
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           <Link to={'/users/'+props.user.id}>
