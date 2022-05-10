@@ -9,7 +9,7 @@ export const MuseumList=()=> {
   return(
     <List>
       {museums.map((museum)=>(
-        <ListItem>
+        <ListItem key={museum.id}>
           <ListItemIcon><MuseumIcon/></ListItemIcon>
           <ListItemText primary={museum.museumName} secondary={museum.access}/>
         </ListItem>
