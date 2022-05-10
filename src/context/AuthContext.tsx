@@ -1,5 +1,5 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
-import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { getAuth, GoogleAuthProvider, signInWithPopup,onAuthStateChanged } from 'firebase/auth';
 
 
 type AuthContextType = {
@@ -15,6 +15,19 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<string | null>('');
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user.uid);
+      }
+    });
+    return () => {
+      unsubscribed();
+    }
+  }, []);
+
   const googleLogin = (callback: VoidFunction) => {
     const auth = getAuth();
     const provider = new GoogleAuthProvider();
