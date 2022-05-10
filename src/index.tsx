@@ -2,10 +2,14 @@ import  React  from 'react';
 import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import { BrowserRouter } from "react-router-dom";
+import {initializeFirebase} from './services/firebase'
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+initializeFirebase();
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
