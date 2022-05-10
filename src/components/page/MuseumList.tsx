@@ -1,5 +1,6 @@
 import { Grid} from '@mui/material';
 import { getMuseums } from '../../data';
+import { Museum } from '../model/Museum';
 
 export const MuseumList=()=> {
 
@@ -9,7 +10,7 @@ export const MuseumList=()=> {
     <Grid container spacing={2}>
       {museums.map((museum)=>(
         <Grid item xs={8}>
-          {museum.museumName} {museum.address} {museum.access}
+          <Museum museum={museum}/>
         </Grid>
       ))}
     </Grid>
