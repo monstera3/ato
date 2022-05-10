@@ -1,5 +1,6 @@
 import { Card, CardContent, Typography } from '@mui/material';
 import { getMuseum, UserType, WatchedMuseumType } from '../../data';
+import { Link } from 'react-router-dom';
 
 type ReviewType = {
   user: UserType,
@@ -26,7 +27,10 @@ export const Review = (props: ReviewType) => {
           {getMuseum(props.museumId).museumName}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {props.user.displayName}の感想
+          <Link to={'/users/'+props.user.id}>
+            {props.user.displayName}の感想
+          </Link>
+
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {review(props.user, props.museumId).rate}/5
