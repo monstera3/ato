@@ -11,10 +11,12 @@ import { Login } from './components/page/Login';
 import { MuseumDetail } from './components/page/MuseumDetail';
 import { UserDetail } from './components/page/UserDetail';
 import { Toolbar } from '@mui/material';
+import { AuthProvider } from './context/AuthContext'
 
 export const App=()=> {
   return (
-    <div className="App">
+    <AuthProvider>
+      <div className="App">
       <ResponsiveAppBar/>
       <SearchBar/>
       <Toolbar />
@@ -31,6 +33,7 @@ export const App=()=> {
         </Route>
         <Route path="exhibitions" element={<ExhibitionList />}/>
       </Routes>
-    </div>
+      </div>
+    </AuthProvider>
   );
 };
