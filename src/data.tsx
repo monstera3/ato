@@ -6,13 +6,13 @@ type MuseumType = {
 }
 
 
-type WatchedMuseumType = {
+export type WatchedMuseumType = {
   museumId: number
   comment: string
   rate: number
 }
 
-type UserType = {
+export type UserType = {
   id: string
   displayName: string
   comment: string

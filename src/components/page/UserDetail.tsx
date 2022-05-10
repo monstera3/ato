@@ -1,6 +1,7 @@
-import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from '@mui/material';
+import { Button, Card, CardActions, CardContent, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { getMuseum, getUser } from '../../data';
+import { getUser } from '../../data';
+import { Review } from './Review';
 
 export const UserDetail = () => {
   const params = useParams();
@@ -20,7 +21,9 @@ export const UserDetail = () => {
         <Stack direction="row" spacing={1}>
           {
             user.watchedMuseum.map((watchedMuseum) => (
-              <Chip label={getMuseum(watchedMuseum.museumId).museumName} size="small" key={watchedMuseum.museumId} />
+              <div>
+                <Review user={user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />
+              </div>
             ))
           }
         </Stack>
