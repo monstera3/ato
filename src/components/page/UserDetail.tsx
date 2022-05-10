@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { getUser } from '../../data';
+import { getMuseum, getUser } from '../../data';
 
 export const UserDetail = () => {
   const params = useParams();
@@ -19,8 +19,8 @@ export const UserDetail = () => {
         </Typography>
         <Stack direction="row" spacing={1}>
           {
-            user.watchedMuseum.map((watchedMovie) => (
-              <Chip label={watchedMovie.museumId} size="small" key={watchedMovie.museumId} />
+            user.watchedMuseum.map((watchedMuseum) => (
+              <Chip label={getMuseum(watchedMuseum.museumId).museumName} size="small" key={watchedMuseum.museumId} />
             ))
           }
         </Stack>
