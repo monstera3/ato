@@ -1,5 +1,4 @@
-import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import MuseumIcon from '@mui/icons-material/Museum'
+import { Grid} from '@mui/material';
 import { getMuseums } from '../../data';
 
 export const MuseumList=()=> {
@@ -7,13 +6,12 @@ export const MuseumList=()=> {
   const museums = getMuseums();
 
   return(
-    <List>
+    <Grid container spacing={2}>
       {museums.map((museum)=>(
-        <ListItem key={museum.id}>
-          <ListItemIcon><MuseumIcon/></ListItemIcon>
-          <ListItemText primary={museum.museumName} secondary={museum.access}/>
-        </ListItem>
+        <Grid item xs={8}>
+          {museum.museumName} {museum.address} {museum.access}
+        </Grid>
       ))}
-    </List>
+    </Grid>
   );
 };
