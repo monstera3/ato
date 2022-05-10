@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Chip, Stack, Typography } from '@mui/material';
+import { Card, CardContent, Chip, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { getMuseum } from '../../data';
 
@@ -18,8 +18,5 @@ export const MuseumDetail = () => {
           <Chip label={museum.address} size="small" />
         </Stack>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>  )
 }

@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 import { getMuseum, UserType, WatchedMuseumType } from '../../data';
 
 type ReviewType = {
@@ -35,9 +35,6 @@ export const Review = (props: ReviewType) => {
           {review(props.user, props.museumId).comment}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   )
 }

@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent, Stack, Typography } from '@mui/material';
+import { Card, CardContent, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../data';
 import { Review } from '../model/Review';
@@ -26,9 +26,6 @@ export const UserDetail = () => {
           }
         </Stack>
       </CardContent>
-      <CardActions>
-        <Button size="small">Learn More</Button>
-      </CardActions>
     </Card>
   )
 }
