@@ -21,9 +21,7 @@ export const UserDetail = () => {
         <Stack direction="row" spacing={1}>
           {
             user.watchedMuseum.map((watchedMuseum) => (
-              <div>
                 <Review user={user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />
-              </div>
             ))
           }
         </Stack>
