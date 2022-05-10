@@ -11,7 +11,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
 
 const pages = ['Home', 'Museum', 'Login'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -108,8 +107,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to={"/museums"}>{page}</Link>
-
+               {page}
               </Button>
             ))}
           </Box>
