@@ -1,7 +1,7 @@
 import { Button, Card, CardActions, CardContent, Stack, Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../data';
-import { Review } from './Review';
+import { Review } from '../model/Review';
 
 export const UserDetail = () => {
   const params = useParams();
