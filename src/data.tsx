@@ -1,4 +1,4 @@
-type MuseumType = {
+export type MuseumType = {
   id: number
   museumName: string
   address: string
