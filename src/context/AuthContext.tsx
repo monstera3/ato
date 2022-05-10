@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const auth = getAuth();
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user.uid);
+        setUser(user.email);
       }
     });
     return () => {
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         const token = credential?.accessToken;
         const user = result.user;
         console.log(user, token);
-        setUser(user.uid);
+        setUser(user.email);
         callback();
       }).catch((error) => {
       const errorCode = error.code;
