@@ -11,7 +11,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
+import { Link } from '@mui/material';
 
 type PageType = {
   title: string,
@@ -62,7 +62,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
           >
-            <Link to='/'>LOGO</Link>
+            <Link href="/" color="inherit">LOGO</Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -97,7 +97,7 @@ const ResponsiveAppBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link to={page.path} >{page.title}</Link></Typography>
+                  <Typography textAlign="center"><Link href={page.path} color="inherit" >{page.title}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -108,7 +108,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <Link to='/'>LOGO</Link>
+            <Link href='/' color="inherit">LOGO</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
             {pages.map((page) => (
@@ -117,7 +117,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link to={page.path} >{page.title}</Link>
+                <Link href={page.path} color="inherit">{page.title}</Link>
               </Button>
             ))}
           </Box>
