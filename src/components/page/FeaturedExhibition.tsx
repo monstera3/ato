@@ -5,7 +5,7 @@ import {
   Typography
 } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import { ExhibitionCard } from './ExhibitionCard';
+import { ExhibitionCard } from '../model/ExhibitionCard';
 
 
 export const FeaturedExhibition=()=> {
