@@ -1,6 +1,6 @@
 import { Grid} from '@mui/material';
 import { getMuseums } from '../../data';
-import { Museum } from '../model/Museum';
+import { MuseumCard } from '../model/MuseumCard';
 import { Link } from 'react-router-dom';
 
 export const MuseumList=()=> {
@@ -12,7 +12,7 @@ export const MuseumList=()=> {
       {museums.map((museum)=>(
         <Grid item xs={8} key={museum.id}>
           <Link to={'/museums/'+museum.id}>
-            <Museum museum={museum}/>
+            <MuseumCard museum={museum}/>
           </Link>
 
         </Grid>

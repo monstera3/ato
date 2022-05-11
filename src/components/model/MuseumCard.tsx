@@ -1,13 +1,13 @@
 import { Card, CardContent, Chip, Stack, Typography } from '@mui/material';
 import { MuseumType } from '../../data';
 
-export const Museum = ( props:{ museum: MuseumType}) => {
+export const MuseumCard = (props:{ museum: MuseumType}) => {
 
   return(
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div">
-          {props.museum.museumName}
+          {props.museum.museumName}a
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {props.museum.access}
