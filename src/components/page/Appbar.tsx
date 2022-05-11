@@ -11,8 +11,26 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Museum', 'Login'];
+type PageType = {
+  title: string,
+  path: string,
+}
+const pages: PageType[] = [
+  {
+    title: 'Home',
+    path: '/',
+  },
+  {
+    title: 'Museum',
+    path: '/museums',
+  },
+  {
+    title: 'Login',
+    path: '/login',
+  }
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -86,8 +104,8 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center"><Link to={page.path} >{page.title}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -103,11 +121,11 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.title}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               {page}
+                <Link to={page.path} >{page.title}</Link>
               </Button>
             ))}
           </Box>
