@@ -3,7 +3,7 @@ import {
   CardActionArea,
   CardActions,
   CardContent,
-  CardMedia,
+  CardMedia, Chip, Stack,
   Typography
 } from '@mui/material';
 import sampleImg from '../../assets/images/sample1.png';
@@ -28,10 +28,10 @@ export const ExhibitionCard = () => {
             <Typography gutterBottom variant="h5" component="div">
               展示名
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              美術館名
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Stack direction="row" spacing={1}>
+              <Chip label='美術館名' size="small" />
+            </Stack>
+            <Typography sx={{my:1}} variant="body2" color="text.secondary">
               開催期間
             </Typography>
           </CardContent>
