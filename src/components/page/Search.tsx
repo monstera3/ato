@@ -18,7 +18,9 @@ export const SearchBar=()=> {
     <div className="App">
       <Container
         maxWidth="lg"
-        sx={{ bgcolor: '#cfe8fc', height: '10vh',display: 'flex', alignItems: 'flex-end' }}>
+        sx={{ my: 5,backgroundColor: '#f5f5f5', height: '6vh',display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between'      }}>
 
         <Box
           component="form"
@@ -26,8 +28,7 @@ export const SearchBar=()=> {
             '& > :not(style)': { m: 0, width: '50ch'},
           }}
         >
-          {/*TODO: labelを枠内に表示したい */}
-          <TextField id="outlined-basic" label="展覧会・美術館・ユーザー検索" variant="outlined"
+          <TextField id="outlined-basic" placeholder="展覧会・美術館・ユーザー検索" variant="outlined"
                      InputProps={{
                        startAdornment: (
                          <InputAdornment position="start">
