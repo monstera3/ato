@@ -38,11 +38,11 @@ export const Login=()=> {
           </Typography>
         </CardContent>
         <CardActions >
-          <Button sx={{ m:'auto',backgroundColor: '#f5f5f5'}}
+          <Button onClick={handleGoogleLogin}
+                  sx={{ m:'auto',backgroundColor: '#f5f5f5'}}
                   variant="outlined" startIcon={<GoogleIcon />}>Login with Google</Button>
         </CardActions>
       </Card>
-      <Button onClick={handleGoogleLogin}>Googleログイン</Button>
     </div>
   );
 };
