@@ -45,19 +45,6 @@ export const MuseumCard = (props:{ museum: MuseumType}) => {
           <Button size="small"><BookmarkBorderIcon/>保存</Button>
         </CardActions>
       </Card>
-      <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography variant="h5" component="div">
-            {props.museum.museumName}
-          </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {props.museum.access}
-          </Typography>
-          <Stack direction="row" spacing={1}>
-            <Chip label={props.museum.address} size="small" />
-          </Stack>
-        </CardContent>
-      </Card>
     </>
   );
 }
