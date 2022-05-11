@@ -11,14 +11,11 @@ import { ExhibitionCard } from './ExhibitionCard';
 export const FeaturedExhibition=()=> {
   return (
     <div className="App">
-
-
-      <Container maxWidth="lg">
+      <Container maxWidth="md">
         <Typography gutterBottom variant="h5" component="div">
           注目の展覧会
         </Typography>
         <Container
-          maxWidth="md"
           sx={{ my: 5,backgroundColor: '#f5f5f5',display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between'}}>
