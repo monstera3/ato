@@ -54,14 +54,6 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="static">
-      {/*TODO:Appbarにlinkをつける*/}
-      {/*<AppBar >*/}
-      {/*  <Toolbar>*/}
-      {/*    <Typography sx={{ mx: 1 }}><Link to={"/"}>Home</Link></Typography>*/}
-      {/*    <Typography sx={{ mx: 1 }}><Link to={"/museums"}>Museum</Link></Typography>*/}
-      {/*    <Typography sx={{ mx: 1 }}><Link to={"/login"}>Login</Link></Typography>*/}
-      {/*  </Toolbar>*/}
-      {/*</AppBar>*/}
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
