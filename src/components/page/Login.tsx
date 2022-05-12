@@ -73,6 +73,10 @@ export const Login=()=> {
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
+          <Typography
+            sx={{ fontSize: 14 ,textAlign:'right',mr:1,mt:2}} color="text.secondary" gutterBottom>
+            <Button onClick={handleClose}><ClearIcon /></Button>️
+          </Typography>
           <DialogTitle id="alert-dialog-title" sx={{ textAlign:'center'}}>
             {"Ato LOGO"}
           </DialogTitle>
