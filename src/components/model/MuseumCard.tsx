@@ -19,7 +19,7 @@ export const MuseumCard = (props:{ museum: MuseumType}) => {
 
   return(
     <>
-      <Card sx={{ maxWidth: 500 }}>
+      <Card>
         <CardActionArea>
           <CardMedia
             component="img"
