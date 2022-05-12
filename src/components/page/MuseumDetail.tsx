@@ -1,6 +1,3 @@
-import { useParams } from 'react-router-dom';
-import { getMuseum } from '../../data';
-import { MuseumCard } from '../model/MuseumCard';
 import {
   Box,
   Container,
@@ -29,8 +26,6 @@ export const MuseumDetail = () => {
     setOpen(!open);
   };
 
-  const params = useParams();
-  const museum = getMuseum(parseInt(params.museumId ? params.museumId : '0', 10));
   return (
     <Container maxWidth='md'>
       <Typography gutterBottom variant="body2" component="p" color="text.secondary">美術館詳細</Typography>
@@ -43,8 +38,6 @@ export const MuseumDetail = () => {
         height: 300,
         backgroundColor: '#f5f5f5'
       }}>内容</Box>
-      <MuseumCard museum={museum} />
-
       <List
         sx={{ width: '100%', maxWidth: 'md', backgroundColor: '#f5f5f5' }}
         component="nav"
