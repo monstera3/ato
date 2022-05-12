@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Button,
-  Container,
+  Container, Link,
   Typography
 } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
@@ -27,7 +27,7 @@ export const FeaturedExhibition=()=> {
           <Button
             sx={{ my: 5, backgroundColor: '#f5f5f5', width: 100 }}
             variant="outlined" endIcon={<ArrowRightAltIcon />}>
-            more
+            <Link href='exhibitions' underline='none'>more</Link>
           </Button>
         </Container>
       </Container>

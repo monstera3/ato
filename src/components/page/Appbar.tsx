@@ -97,7 +97,7 @@ const ResponsiveAppBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link href={page.path} color="inherit" >{page.title}</Link></Typography>
+                  <Typography textAlign="center"><Link href={page.path} color="inherit" underline='none'>{page.title}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -108,7 +108,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
           >
-            <Link href='/' color="inherit">LOGO</Link>
+            <Link href='/' color="inherit" underline='none'>LOGO</Link>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
             {pages.map((page) => (
@@ -117,7 +117,7 @@ const ResponsiveAppBar = () => {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                <Link href={page.path} color="inherit">{page.title}</Link>
+                <Link href={page.path} color="inherit" underline='none'>{page.title}</Link>
               </Button>
             ))}
           </Box>
