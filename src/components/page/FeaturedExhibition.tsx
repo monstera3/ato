@@ -27,7 +27,8 @@ export const FeaturedExhibition=()=> {
           <Button
             sx={{ my: 5, backgroundColor: '#f5f5f5', width: 100 }}
             variant="outlined" endIcon={<ArrowRightAltIcon />}>
-            <Link href='exhibitions' underline='none'>more</Link>
+            {/*TODO ExhibitionListコンポーネントにリンクしたい*/}
+            <Link href="exhibitions" underline='none'>more</Link>
           </Button>
         </Container>
       </Container>

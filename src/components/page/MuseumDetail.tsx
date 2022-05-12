@@ -31,7 +31,7 @@ export const MuseumDetail = () => {
       <Typography gutterBottom variant="body2" component="p" color="text.secondary">美術館詳細</Typography>
       <Typography gutterBottom variant="subtitle1" component="p" >東京都</Typography>
       <Typography gutterBottom variant="h4" component="p" >美術館名：テストテスト</Typography>
-      <Typography gutterBottom variant="subtitle1" component="p" >MUSEUM OF CONTEMPORARY ART TOKYO</Typography>
+      <Typography gutterBottom variant="subtitle1" component="p" >english name</Typography>
       <ImageListItem sx={{ width: 400, height: 150 }}><img src={sampleImg} alt="a" /></ImageListItem>
       <Box sx={{
         width: 'md',
