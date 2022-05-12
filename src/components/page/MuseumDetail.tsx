@@ -6,6 +6,9 @@ export const MuseumDetail = () => {
   const params = useParams();
   const museum = getMuseum(parseInt(params.museumId ? params.museumId : '0', 10));
   return (
-    <MuseumCard museum={museum} />
+    <div>
+      <MuseumCard museum={museum} />
+
+    </div>
      )
 }

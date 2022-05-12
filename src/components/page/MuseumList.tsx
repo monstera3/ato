@@ -8,10 +8,10 @@ export const MuseumList=()=> {
   const museums = getMuseums();
 
   return(
-    <Grid container spacing={2}>
+    <Grid container spacing={2} maxWidth="md" m="auto">
       {museums.map((museum)=>(
-        <Grid item xs={12} sm={6} md={4} lg={3} key={museum.id}>
-          <Link to={'/museums/'+museum.id}>
+        <Grid item xs={12} sm={6} md={4} lg={4} key={museum.id}>
+          <Link to={'/museums/'+museum.id} >
             <MuseumCard museum={museum}/>
           </Link>
 
