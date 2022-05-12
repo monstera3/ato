@@ -63,6 +63,7 @@ export const Login=()=> {
             Login with Google</Button>
         </CardActions>
       </Card>
+      {/*TODO: 右上のログインをクリックしたらDialogが出てくるようにしたい*/}
       <div>
         <Button variant="outlined" onClick={handleClickOpen}>
           loginボタン
