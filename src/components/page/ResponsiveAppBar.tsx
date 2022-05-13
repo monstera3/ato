@@ -26,10 +26,6 @@ const pages: PageType[] = [
     title: 'Museum',
     path: '/museums',
   },
-  {
-    title: 'Login',
-    path: '/login',
-  }
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
