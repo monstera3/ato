@@ -87,7 +87,7 @@ const ResponsiveAppBar = () => {
               <Typography textAlign="center"><Link href={page.path} color="inherit" underline='none'>{page.title}</Link></Typography>
             </MenuItem>
           ))}
-          <MenuItem key="login" onClick={handleCloseNavMenu}><Typography textAlign="center">Login</Typography></MenuItem>
+          <MenuItem key="login"><Typography textAlign="center"><Login /></Typography></MenuItem>
         </Menu>
       </Box>
     )
