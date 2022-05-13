@@ -16,14 +16,14 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 export const Login=()=> {
 
-  const [open, setOpen] = React.useState(false);
+  const [loginDialogOpen, setLoginDialogOpen] = React.useState(false);
 
   const handleClickOpen = () => {
-    setOpen(true);
+    setLoginDialogOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setLoginDialogOpen(false);
   };
 
   const auth = useAuth();
@@ -69,7 +69,7 @@ export const Login=()=> {
           loginボタン
         </Button>
         <Dialog
-          open={open}
+          open={loginDialogOpen}
           onClose={handleClose}
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
