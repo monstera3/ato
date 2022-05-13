@@ -7,7 +7,6 @@ import { ExhibitionList } from './components/page/ExhibitionList';
 import { MuseumList } from './components/page/MuseumList';
 import { Home } from './components/page/Home';
 import { About } from './components/page/About';
-import { Login } from './components/page/Login';
 import { MuseumDetail } from './components/page/MuseumDetail';
 import { UserDetail } from './components/page/UserDetail';
 import { Toolbar } from '@mui/material';
@@ -23,7 +22,6 @@ export const App=()=> {
       <Routes>
         <Route path="/" element={<Home />}/>
         <Route path="about" element={<About />}/>
-        <Route path="login" element={<Login />}/>
         <Route path="museums">
           <Route index element={<MuseumList />} />
           <Route path=":museumId" element={<MuseumDetail />}/>
