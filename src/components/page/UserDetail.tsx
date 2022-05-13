@@ -35,6 +35,8 @@ export const UserDetail = () => {
             <Button variant="contained" >編集</Button>
           </Container>
       </Container>
+
+      {/*TODO: タブを追加したい*/}
       <Card sx={{ minWidth: 275 }}>
         a
         <CardContent>
