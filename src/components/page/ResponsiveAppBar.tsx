@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from '@mui/material';
 import { Login } from './Login';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 type PageType = {
@@ -144,7 +145,8 @@ const ResponsiveAppBar = () => {
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
+                  {/*TODO: アイコンを行ごとに変えたい*/}
+                  <LogoutIcon/><Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
             </Menu>
