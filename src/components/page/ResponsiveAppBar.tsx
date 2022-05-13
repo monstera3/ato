@@ -95,14 +95,7 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-          >
-            <Link href='/' color="inherit" underline='none'>LOGO</Link>
-          </Typography>
+          <XsLogo />
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
             {pages.map((page) => (
               <Button
@@ -160,6 +153,19 @@ const MdLogo = () => {
       sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
     >
       <Link href="/" color="inherit"  underline='none'>LOGO</Link>
+    </Typography>
+  )
+}
+
+const XsLogo = () => {
+  return (
+    <Typography
+      variant="h6"
+      noWrap
+      component="div"
+      sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+    >
+      <Link href='/' color="inherit" underline='none'>LOGO</Link>
     </Typography>
   )
 }
