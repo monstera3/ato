@@ -93,6 +93,21 @@ const ResponsiveAppBar = () => {
       </Box>
     )
   }
+  const MdMenu = () => {
+    return (
+      <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
+        {pages.map((page) => (
+          <Button
+            key={page.title}
+            onClick={handleCloseNavMenu}
+            sx={{ my: 2, color: 'white', display: 'block' }}
+          >
+            <Link href={page.path} color="inherit" underline='none'>{page.title}</Link>
+          </Button>
+        ))}
+      </Box>
+    )
+  }
 
   return (
     <AppBar position="static">
@@ -101,55 +116,7 @@ const ResponsiveAppBar = () => {
           <MdLogo />
           <XsMenu />
           <XsLogo />
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            {/*ハンバーガーメニュー*/}
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: 'block', md: 'none' },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link href={page.path} color="inherit" underline='none'>{page.title}</Link></Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <XsLogo />
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'flex-end' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.title}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                <Link href={page.path} color="inherit" underline='none'>{page.title}</Link>
-              </Button>
-            ))}
-          </Box>
+          <MdMenu />
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
