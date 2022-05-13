@@ -44,7 +44,8 @@ export const SearchBar=()=> {
             aria-labelledby="demo-row-radio-buttons-group-label"
             name="row-radio-buttons-group"
           >
-            <FormControlLabel value="EXHIBITION" control={<Radio />} label="展覧会" />
+            {/*TODO: ラジオボタンを横並びで固定したい*/}
+            <FormControlLabel value="EXHIBITION" control={<Radio />} label="展覧会"/>
             <FormControlLabel value="MUSEUM" control={<Radio />} label="美術館" />
             <FormControlLabel value="USER" control={<Radio />} label="ユーザー" />
           </RadioGroup>
