@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ResponsiveAppBar from './components/page/Appbar';
+import ResponsiveAppBar from './components/page/ResponsiveAppBar';
 import { SearchBar } from './components/page/Search';
 import { Routes, Route } from 'react-router-dom'
 import { ExhibitionList } from './components/page/ExhibitionList';
