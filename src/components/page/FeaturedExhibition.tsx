@@ -20,9 +20,9 @@ export const FeaturedExhibition=()=> {
             sx={{ my: 5,backgroundColor: '#f5f5f5',display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between'}}>
-            <ExhibitionCard />
-            <ExhibitionCard />
-            <ExhibitionCard />
+            {/*<ExhibitionCard />*/}
+            {/*<ExhibitionCard />*/}
+            {/*<ExhibitionCard />*/}
           </Container>
           <Button
             sx={{ my: 5, backgroundColor: '#f5f5f5', width: 100 }}

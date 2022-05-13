@@ -11,9 +11,10 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CreateIcon from '@mui/icons-material/Create';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import React from 'react';
+import { ExhibitionType } from '../../data';
 
 
-export const ExhibitionCard = () => {
+export const ExhibitionCard = (props:{ exhibition: ExhibitionType}) => {
   return(
     <div>
       <Card sx={{ maxWidth: 345 }}>
@@ -26,13 +27,13 @@ export const ExhibitionCard = () => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              展示名
+              {props.exhibition.exhibitionName}
             </Typography>
             <Stack direction="row" spacing={1}>
-              <Chip label='美術館名' size="small" />
+              <Chip label={props.exhibition.museumName} size="small" />
             </Stack>
             <Typography sx={{my:1}} variant="body2" color="text.secondary">
-              開催期間
+              {props.exhibition.season}
             </Typography>
           </CardContent>
         </CardActionArea>
