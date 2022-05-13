@@ -1,3 +1,10 @@
+export type ExhibitionType = {
+  id: number
+  exhibitionName: string
+  museumName: string
+  season: string
+}
+
 export type MuseumType = {
   id: number
   museumName: string
@@ -170,3 +177,32 @@ export const getMuseum = (id: number): MuseumType  => {
   const museum = museums.find((museum: MuseumType) => museum.id === id)
   return museum ? museum : { id: 0, museumName:'', address: '',access: '' }
 }
+
+
+const exhibitions: ExhibitionType[] = [
+  {
+    id: 1,
+    exhibitionName: '冨嶽三十六景と東海道五十三次',
+    museumName:'MOA美術館',
+    season: '開催期間：2022年5月13日(金)〜2022年7月18日(月・祝)',
+  },{
+    id: 2,
+    exhibitionName: 'ゲルハルト・リヒター展',
+    museumName:'東京国立近代美術館',
+    season: '開催期間：2022年6月7日(火)〜2022年10月2日(日)',
+  },{
+    id: 3,
+    exhibitionName: 'ダミアン・ハースト　桜',
+    museumName:'国立新美術館',
+    season: '開催期間：2022年3月2日(水)〜2022年5月23日(月) ',
+  },
+]
+
+export const getExhibitions = (): ExhibitionType[] => {
+  return exhibitions;
+}
+
+// export const getExhibition = (id: number): ExhibitionType  => {
+//   const exhibition = exhibitions.find((exhibition: ExhibitionType) => exhibition.id === id)
+//   return exhibition ? exhibition : { id: 0, exhibitionName:'', museumName: '',season: '' }
+// }
