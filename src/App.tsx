@@ -11,6 +11,7 @@ import { MuseumDetail } from './components/page/MuseumDetail';
 import { UserDetail } from './components/page/UserDetail';
 import { Toolbar } from '@mui/material';
 import { AuthProvider } from './context/AuthContext'
+import { ExhibitionDetail } from './components/page/ExhibitionDetail';
 
 export const App=()=> {
   return (
@@ -30,6 +31,7 @@ export const App=()=> {
           <Route path=":userId" element={<UserDetail />}/>
         </Route>
         <Route path="exhibitions" element={<ExhibitionList />}/>
+        <Route path=":museumId" element={<ExhibitionDetail />}/>
       </Routes>
       </div>
     </AuthProvider>

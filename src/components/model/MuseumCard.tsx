@@ -28,7 +28,7 @@ export const MuseumCard = (props:{ museum: MuseumType}) => {
             alt="green iguana"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h5" component="div" >
               {props.museum.museumName}
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -40,7 +40,7 @@ export const MuseumCard = (props:{ museum: MuseumType}) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small"><RemoveRedEyeIcon/>閲覧数</Button>
+          <Button size="small" ><RemoveRedEyeIcon/>閲覧数</Button>
           <Button size="small"><CreateIcon/>投稿</Button>
           <Button size="small"><BookmarkBorderIcon/>保存</Button>
         </CardActions>
