@@ -56,14 +56,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="lg">
         <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-          >
-            <Link href="/" color="inherit"  underline='none'>LOGO</Link>
-          </Typography>
+          <MdLogo />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             {/*ハンバーガーメニュー*/}
@@ -157,3 +150,16 @@ const ResponsiveAppBar = () => {
   );
 };
 export default ResponsiveAppBar;
+
+const MdLogo = () => {
+  return (
+    <Typography
+      variant="h6"
+      noWrap
+      component="div"
+      sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+    >
+      <Link href="/" color="inherit"  underline='none'>LOGO</Link>
+    </Typography>
+  )
+}
