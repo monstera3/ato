@@ -12,6 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import { Link } from '@mui/material';
+import { Login } from './Login';
+
 
 type PageType = {
   title: string,
@@ -102,6 +104,9 @@ const ResponsiveAppBar = () => {
             <Link href={page.path} color="inherit" underline='none'>{page.title}</Link>
           </Button>
         ))}
+        <Button key="login" onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+          <Login />
+        </Button>
       </Box>
     )
   }
