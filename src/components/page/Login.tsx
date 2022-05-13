@@ -35,9 +35,9 @@ export const Login=()=> {
     <div>
       {/*TODO: 右上のログインをクリックしたらDialogが出てくるようにしたい*/}
       <div>
-        <Button variant="outlined" onClick={handleClickOpen}>
-          loginボタン
-        </Button>
+        <div onClick={handleClickOpen}>
+          Login
+        </div>
         <Dialog
           open={loginDialogOpen}
           onClose={handleClose}
