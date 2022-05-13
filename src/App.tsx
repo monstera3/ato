@@ -30,8 +30,10 @@ export const App=()=> {
         <Route path="users">
           <Route path=":userId" element={<UserDetail />}/>
         </Route>
-        <Route path="exhibitions" element={<ExhibitionList />}/>
-        <Route path=":museumId" element={<ExhibitionDetail />}/>
+        <Route path="exhibitions">
+          <Route index element={<ExhibitionList />} />
+          <Route path=":museumId" element={<ExhibitionDetail />}/>
+        </Route>
       </Routes>
       </div>
     </AuthProvider>
