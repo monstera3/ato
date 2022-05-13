@@ -1,4 +1,12 @@
-import { Avatar, Box, Card, CardContent, Stack, Typography } from '@mui/material';
+import {
+  Avatar, Box,
+  Button,
+  Card,
+  CardContent,
+  Container,
+  Stack,
+  Typography
+} from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { getUser } from '../../data';
 import sampleImg from '../../assets/images/sample1.png'
@@ -9,10 +17,24 @@ export const UserDetail = () => {
   const user = getUser(params.userId ? params.userId : '')
   return (
     <>
-      <Box>
-        <Avatar alt="Remy Sharp" src={sampleImg} sx={{ width: 56, height: 56 }}/>
+      <Container sx={{maxWidth:'md',backgroundColor: '#FCE5CE',display:'flex' }}>
+        <Avatar alt="Remy Sharp" src={sampleImg} sx={{ width: 120, height: 120 }}/>
+          <Container sx={{display:'flex' ,justifyContent:'space-between' ,alignItems:'flex-start'}} >
+            <Box>
+              <Typography component="div" variant="h5">
+                ユーザー名
+              </Typography>
+              <Typography variant="subtitle1" color="text.secondary" component="div">
+                コメント
+              </Typography>
+              <Typography variant="subtitle1" color="text.secondary" component="div">
+                1 フォロワー
+              </Typography>
+            </Box>
 
-      </Box>
+            <Button variant="contained" >編集</Button>
+          </Container>
+      </Container>
       <Card sx={{ minWidth: 275 }}>
         a
         <CardContent>
