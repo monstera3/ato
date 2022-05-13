@@ -1,14 +1,18 @@
 import React from 'react';
 import {
   Button,
-  Container, Link,
+  Container, Grid, Link,
   Typography
 } from '@mui/material';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { ExhibitionCard } from '../model/ExhibitionCard';
+import { getExhibitions } from '../../data';
 
 
 export const FeaturedExhibition=()=> {
+
+  const exhibitions = getExhibitions();
+
   return (
     <div className="App">
       <Container maxWidth="md">
@@ -16,14 +20,16 @@ export const FeaturedExhibition=()=> {
           注目の展覧会
         </Typography>
         <Container sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <Container
-            sx={{ my: 5,backgroundColor: '#f5f5f5',display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between'}}>
-            {/*<ExhibitionCard />*/}
-            {/*<ExhibitionCard />*/}
-            {/*<ExhibitionCard />*/}
-          </Container>
+            <Grid container spacing={2}>
+              {exhibitions.map((exhibition)=>(
+                <Grid item xs={12} sm={6} md={4} lg={4} key={exhibition.id}>
+                  {/*<Link to={'/exhibitions/'+exhibition.id}>*/}
+                    <ExhibitionCard exhibition={exhibition}/>
+                  {/*</Link>*/}
+
+                </Grid>
+              ))}
+            </Grid>
           <Button
             sx={{ my: 5, backgroundColor: '#f5f5f5', width: 100 }}
             variant="outlined" endIcon={<ArrowRightAltIcon />}>
