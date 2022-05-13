@@ -32,7 +32,7 @@ export const App=()=> {
         </Route>
         <Route path="exhibitions">
           <Route index element={<ExhibitionList />} />
-          <Route path=":museumId" element={<ExhibitionDetail />}/>
+          <Route path=":exhibitionId" element={<ExhibitionDetail />}/>
         </Route>
       </Routes>
       </div>
