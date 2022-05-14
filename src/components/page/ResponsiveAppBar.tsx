@@ -22,13 +22,17 @@ type PageType = {
 }
 const pages: PageType[] = [
   {
-    title: 'Home',
+    title: 'ホーム',
     path: '/',
   },
   {
-    title: 'Museum',
+    title: '美術館',
     path: '/museums',
   },
+  {
+    title:'展覧会',
+    path:'/exhibitions'
+  }
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
