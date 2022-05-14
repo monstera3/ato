@@ -8,12 +8,13 @@ import {
   Typography
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { getUser, UserType } from '../../data';
+import {  getUser, UserType } from '../../data';
 import sampleImg from '../../assets/images/sample1.png'
 import { Review } from '../model/Review';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import { SyntheticEvent, useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import { ReviewCard } from './ReviewCard';
+import { MuseumList } from './MuseumList';
 
 export const UserDetail = () => {
   const params = useParams();
@@ -46,8 +47,20 @@ export const UserDetail = () => {
 }
 
 const UserSaves = (props: { user: UserType }) => {
+
   return (
-    <div>UserSaves {props.user.id}</div>
+    <Container maxWidth='md'>
+      UserSaves {props.user.id}
+      <Box>
+        <Typography>展覧会</Typography>
+
+      </Box>
+      <Box>
+        <Typography>美術館</Typography>
+  {/* TODO 保存したカードを表示させたい*/}
+        <MuseumList />
+      </Box>
+    </Container>
   )
 }
 
