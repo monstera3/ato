@@ -26,7 +26,7 @@ export const ExhibitionCard = (props:{ exhibition: ExhibitionType}) => {
             alt="green iguana"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {props.exhibition.exhibitionName}
             </Typography>
             <Stack direction="row" spacing={1}>

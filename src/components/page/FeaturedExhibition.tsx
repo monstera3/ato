@@ -26,7 +26,6 @@ export const FeaturedExhibition=()=> {
                   {/*<Link to={'/exhibitions/'+exhibition.id}>*/}
                     <ExhibitionCard exhibition={exhibition}/>
                   {/*</Link>*/}
-
                 </Grid>
               ))}
             </Grid>

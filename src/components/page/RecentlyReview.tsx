@@ -13,11 +13,9 @@ export const RecentlyReview=()=> {
         <Typography gutterBottom variant="h5" component="div">
           最近投稿された感想
         </Typography>
-        <Box
-          sx={{ my: 5,backgroundColor: '#f5f5f5',display: 'flex',
-            justifyContent: 'space-end'}}>
+        <Box sx={{ my: 5,}}>
           <ReviewCard />
-          <ReviewCard />
+
         </Box>
 
       </Container>
