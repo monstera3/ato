@@ -1,8 +1,6 @@
 import {
-  Avatar, Box, ButtonBase, Card, CardActions,
-  CardContent,
-  CardHeader,
-  CardMedia, Chip, Grid, IconButton,
+  Avatar, Box, ButtonBase, CardActions,
+  CardHeader, Chip, Grid, IconButton,
   Paper,
   Rating, Stack,
   Typography
@@ -17,49 +15,6 @@ import StarIcon from '@mui/icons-material/Star';
 export const ReviewCard = () => {
   return(
     <>
-      <Card
-        sx={{ maxWidth: 'md',display: 'flex',backgroundColor:'#cfe8fc' ,my:5}}>
-        <CardMedia
-          component="img"
-          height="200"
-          image={sampleImg}
-          alt="Paella dish"
-        />
-
-        <CardContent sx={{ width: 460 }}>
-          <CardHeader
-            avatar={
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                R
-              </Avatar>
-            }
-            title="ユーザー名"
-            subheader="未定"
-          />
-          <Typography variant="h6" color="text.secondary">
-            展示名
-          </Typography>
-          <Rating name="read-only" readOnly />
-          <Paper elevation={0}>
-            <Typography variant="subtitle2" color="text.secondary">
-              タイトル
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              本文コメント
-            </Typography>
-          </Paper>
-
-
-
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-
-          </CardActions>
-        </CardContent>
-
-      </Card>
       <ComplexGrid />
     </>
 
@@ -129,20 +84,30 @@ const ComplexGrid = () => {
                   本文コメント
                 </Typography>
               </Paper>
-              <CardHeader
-                avatar={
-                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    R
-                  </Avatar>
-                }
-                title="ユーザー名"
-              />
-              <Typography variant="body2" color="text.secondary">投稿日2022/05/14</Typography>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-              </CardActions>
+              <Box sx={{
+                width: 'md',
+                display: 'flex',
+                alignItems: 'center',
+              }}>
+                <CardHeader
+                  avatar={
+                    <Avatar sx={{ backgroundColor: red[500], }} aria-label="recipe">
+                      R
+                    </Avatar>
+                  }
+                  title="ユーザー名"
+                />
+                <Typography variant="body2" color="text.secondary">投稿日2022/05/14</Typography>
+                <CardActions disableSpacing>
+                  <IconButton aria-label="add to favorites" size='small'>
+                    <FavoriteIcon />
+                  </IconButton>
+                  <Typography>1</Typography>
+
+                </CardActions>
+
+              </Box>
+
             </Grid>
           </Grid>
 
