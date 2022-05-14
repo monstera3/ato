@@ -1,6 +1,6 @@
 import {
   Avatar, Box, ButtonBase, CardActions,
-  CardHeader, Chip, Grid, IconButton,
+  CardHeader, CardMedia, Chip, Grid, IconButton,
   Paper,
   Rating, Stack,
   Typography
@@ -12,15 +12,6 @@ import React from 'react';
 import StarIcon from '@mui/icons-material/Star';
 
 
-export const ReviewCard = () => {
-  return(
-    <>
-      <ComplexGrid />
-    </>
-
-  );
-}
-
 
 const labels: { [index: string]: string } = {
   1: '1',
@@ -31,9 +22,8 @@ const labels: { [index: string]: string } = {
 };
 
 
-const ComplexGrid = () => {
-  //星の数
-  const value = 4;
+export const ReviewCard = () => {
+
 
   return(
     <Paper
@@ -47,9 +37,9 @@ const ComplexGrid = () => {
     >
       <Grid container spacing={2}>
         <Grid item>
-          <ButtonBase sx={{ width: 128, height: 128 }}>
-            <img alt="complex" src={sampleImg} height="100" width="150"/>
-          </ButtonBase>
+          {/*<ButtonBase sx={{ width: 128, height: 128 }}>*/}
+            <CardMedia alt="complex" src={sampleImg} component="img" sx={{ width: 200 }}/>
+          {/*</ButtonBase>*/}
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={2}>
@@ -59,21 +49,7 @@ const ComplexGrid = () => {
               <Stack direction="row" spacing={1}>
                 <Chip label='美術館名' size="small" />
               </Stack>
-              <Box
-                sx={{
-                  width: 200,
-                  display: 'flex',
-                  alignItems: 'center',
-                }}
-              >
-                <Rating
-                  name="text-feedback"
-                  value={value}
-                  readOnly
-                  emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
-                />
-                <Box sx={{ ml: 2 }}>{labels[value]}</Box>
-              </Box>
+              <StarReview />
             </Grid>
             <Grid item>
               <Paper elevation={0}>
@@ -91,7 +67,7 @@ const ComplexGrid = () => {
               }}>
                 <CardHeader
                   avatar={
-                    <Avatar sx={{ backgroundColor: red[500], }} aria-label="recipe">
+                    <Avatar sx={{ backgroundColor: red[500],}} aria-label="recipe">
                       R
                     </Avatar>
                   }
@@ -114,5 +90,27 @@ const ComplexGrid = () => {
         </Grid>
       </Grid>
     </Paper>
+  );
+}
+
+const StarReview = () => {
+  //星の数
+  const value = 4;
+  return(
+    <Box
+      sx={{
+        width: 200,
+        display: 'flex',
+        alignItems: 'center',
+      }}
+    >
+      <Rating
+        name="text-feedback"
+        value={value}
+        readOnly
+        emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+      />
+      <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+    </Box>
   );
 }

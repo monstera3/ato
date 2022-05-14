@@ -5,7 +5,14 @@ import {
   Typography,
   List,
   Collapse,
-  ListItemIcon, ListSubheader, ListItemText, ListItemButton
+  ListItemIcon,
+  ListSubheader,
+  ListItemText,
+  ListItemButton,
+  Table,
+  TableCell,
+  TableBody,
+  TableContainer, TableRow, TableHead
 } from '@mui/material';
 import CallMissedOutgoingIcon from '@mui/icons-material/CallMissedOutgoing';
 import CreateIcon from '@mui/icons-material/Create';
@@ -17,6 +24,8 @@ import MuseumIcon from '@mui/icons-material/Museum';
 import React from 'react';
 import sampleImg from "../../assets/images/sample1.png"
 import { ExpandLess, ExpandMore, StarBorder } from '@mui/icons-material';
+import Paper from '@mui/material/Paper';
+
 
 export const MuseumDetail = () => {
 
@@ -53,6 +62,7 @@ export const MuseumDetail = () => {
             <CallMissedOutgoingIcon />
           </ListItemIcon>
           <ListItemText primary="公式サイト" />
+          <Typography align="right">Calories</Typography>
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
@@ -100,7 +110,44 @@ export const MuseumDetail = () => {
           </List>
         </Collapse>
       </List>
-
+      <BasicTable />
     </Container>
      )
+}
+
+const createData = (name: string, calories: number,) => {
+  return { name, calories};
+}
+const rows = [
+  createData('Frozen yoghurt', 159),
+  createData('Ice cream sandwich', 237,)
+];
+
+
+const BasicTable = () => {
+  return(
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>情報</TableCell>
+            <TableCell align="right">Calories</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+  );
 }
