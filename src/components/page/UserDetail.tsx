@@ -17,26 +17,7 @@ export const UserDetail = () => {
   const user = getUser(params.userId ? params.userId : '')
   return (
     <>
-      <Container sx={{maxWidth:'md',backgroundColor: '#FCE5CE',display:'flex' }}>
-        <Avatar alt="Remy Sharp" src={sampleImg} sx={{ width: 120, height: 120 }}/>
-          <Container sx={{display:'flex' ,justifyContent:'space-between' ,alignItems:'flex-start'}} >
-            <Box>
-              <Typography component="div" variant="h5">
-                ユーザー名
-              </Typography>
-              <Typography variant="subtitle1" color="text.secondary" component="div">
-                コメント
-              </Typography>
-              <Typography variant="subtitle1" color="text.secondary" component="div">
-                1 フォロワー
-              </Typography>
-            </Box>
-
-            <Button variant="contained" >編集</Button>
-          </Container>
-      </Container>
-
-      {/*TODO: タブを追加したい*/}
+      <UserProfile />
       <UserReviews user={user} />
     </>
   )
@@ -65,4 +46,28 @@ const UserReviews = (props: { user: UserType }) => {
       </CardContent>
     </Card>
   )
+}
+
+const UserProfile = () => {
+  return(
+    <Container sx={{maxWidth:'md',backgroundColor: '#FCE5CE',display:'flex' }}>
+      <Avatar alt="Remy Sharp" src={sampleImg} sx={{ width: 120, height: 120 }}/>
+      <Container sx={{display:'flex' ,justifyContent:'space-between' ,alignItems:'flex-start'}} >
+        <Box>
+          <Typography component="div" variant="h5">
+            ユーザー名
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary" component="div">
+            コメント
+          </Typography>
+          <Typography variant="subtitle1" color="text.secondary" component="div">
+            1 フォロワー
+          </Typography>
+        </Box>
+
+        <Button variant="contained" >編集</Button>
+      </Container>
+    </Container>
+
+  );
 }
