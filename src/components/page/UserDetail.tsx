@@ -13,6 +13,7 @@ import sampleImg from '../../assets/images/sample1.png'
 import { Review } from '../model/Review';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { SyntheticEvent, useState } from 'react';
+import { ReviewCard } from './ReviewCard';
 
 export const UserDetail = () => {
   const params = useParams();
@@ -25,7 +26,7 @@ export const UserDetail = () => {
 
   return (
     <>
-      <UserProfile />
+      <UserProfile user={user}/>
       <TabContext value={value} >
         <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
           <Container maxWidth="md">
@@ -59,37 +60,41 @@ const UserFollowings = (props: { user: UserType }) => {
 
 const UserReviews = (props: { user: UserType }) => {
   return (
-    <Card sx={{ minWidth: 275 }}>
-      <CardContent>
-        <Typography variant="h5" component="div">
-          {props.user.displayName}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {props.user.id}
-        </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {props.user.comment}
-        </Typography>
-        <Stack direction="row" spacing={1}>
-          {
-            props.user.watchedMuseum.map((watchedMuseum) => (
-              <Review user={props.user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />
-            ))
-          }
-        </Stack>
-      </CardContent>
-    </Card>
+    <Container maxWidth='md'>
+      <ReviewCard />
+      <Card sx={{ minWidth: 275 }}>
+        <CardContent>
+          <Typography variant="h5" component="div">
+            {props.user.displayName}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {props.user.id}
+          </Typography>
+          <Typography sx={{ mb: 1.5 }} color="text.secondary">
+            {props.user.comment}
+          </Typography>
+          <Stack direction="row" spacing={1}>
+            {
+              props.user.watchedMuseum.map((watchedMuseum) => (
+                <Review user={props.user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />
+              ))
+            }
+          </Stack>
+        </CardContent>
+      </Card>
+    </Container>
+
   )
 }
 
-const UserProfile = () => {
+const UserProfile = (props: { user: UserType }) => {
   return(
     <Container maxWidth="md" sx={{backgroundColor: '#FCE5CE',display:'flex' }}>
       <Avatar alt="Remy Sharp" src={sampleImg} sx={{ width: 120, height: 120 }}/>
       <Container sx={{display:'flex' ,justifyContent:'space-between' ,alignItems:'flex-start'}} >
         <Box>
           <Typography component="div" variant="h5">
-            ユーザー名
+            {props.user.displayName}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
             コメント
@@ -99,7 +104,7 @@ const UserProfile = () => {
           </Typography>
         </Box>
 
-        <Button variant="contained" >編集</Button>
+        <Button variant="contained" sx={{color:'black',backgroundColor: '#FFF'}}>編集</Button>
       </Container>
     </Container>
 
