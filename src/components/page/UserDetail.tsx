@@ -4,28 +4,62 @@ import {
   Card,
   CardContent,
   Container,
-  Stack,
+  Stack, Tab,
   Typography
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { getUser, UserType } from '../../data';
 import sampleImg from '../../assets/images/sample1.png'
 import { Review } from '../model/Review';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
+import { SyntheticEvent, useState } from 'react';
 
 export const UserDetail = () => {
   const params = useParams();
   const user = getUser(params.userId ? params.userId : '')
+  const [value, setValue] = useState('userReviews');
+
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
+
   return (
     <>
       <UserProfile />
-      <UserReviews user={user} />
+      <TabContext value={value} >
+        <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
+          <Container maxWidth="md">
+            <TabList onChange={handleChange}>
+              <Tab label="投稿" value="userReviews" />
+              <Tab label="保存" value="userSaves" />
+              <Tab label="フォロー" value="userFollowings" />
+            </TabList>
+          </Container>
+        </Box>
+        <TabPanel value="userReviews"><UserReviews user={user} /></TabPanel>
+        <TabPanel value="userSaves"><UserSaves user={user} /></TabPanel>
+        <TabPanel value="userFollowings"><UserFollowings user={user} /></TabPanel>
+      </TabContext>
     </>
   )
 }
+
+const UserSaves = (props: { user: UserType }) => {
+  return (
+    <div>UserSaves {props.user.id}</div>
+  )
+}
+
+const UserFollowings = (props: { user: UserType }) => {
+  return (
+    <div>UserFollowings {props.user.id}</div>
+  )
+}
+
+
 const UserReviews = (props: { user: UserType }) => {
   return (
     <Card sx={{ minWidth: 275 }}>
-      a
       <CardContent>
         <Typography variant="h5" component="div">
           {props.user.displayName}
@@ -50,7 +84,7 @@ const UserReviews = (props: { user: UserType }) => {
 
 const UserProfile = () => {
   return(
-    <Container sx={{maxWidth:'md',backgroundColor: '#FCE5CE',display:'flex' }}>
+    <Container maxWidth="md" sx={{backgroundColor: '#FCE5CE',display:'flex' }}>
       <Avatar alt="Remy Sharp" src={sampleImg} sx={{ width: 120, height: 120 }}/>
       <Container sx={{display:'flex' ,justifyContent:'space-between' ,alignItems:'flex-start'}} >
         <Box>
