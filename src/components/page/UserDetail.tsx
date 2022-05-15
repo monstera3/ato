@@ -102,6 +102,7 @@ const UserReviews = (props: { user: UserType }) => {
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {props.user.comment}
           </Typography>
+          {/* TODO */}
           {/*<Stack direction="row" spacing={1}>*/}
           {/*  {*/}
           {/*    props.user.watchedMuseum.map((watchedMuseum) => (*/}
