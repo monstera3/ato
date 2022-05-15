@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
 export const MuseumList=()=> {
-  const { isLoading, error, data } = useQuery('repoData', () =>
+  const { isLoading, error, data } = useQuery('museumList', () =>
     fetch('api/museums').then(res => res.json())
   );
 
