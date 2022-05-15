@@ -26,6 +26,18 @@ export type UserType = {
   ato_id: string
   name: string
   comment: string
-  watchedMuseum: WatchedMuseumType[]
-  followingUserIds: string[]
+  visits: VisitType[]
+}
+
+export type VisitType = {
+  id: number
+  date: string
+  exhibition: ExhibitionType
+  review: ReviewType
+  museum: MuseumType
+}
+
+export type ReviewType = {
+  comment: string
+  rating: number
 }

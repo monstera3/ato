@@ -8,13 +8,14 @@ import {
   Typography
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { UserType } from '../../data';
+import { UserType, VisitType } from '../../data';
 import sampleImg from '../../assets/images/sample1.png'
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import React, { SyntheticEvent, useState } from 'react';
 import { ReviewCard } from './ReviewCard';
 import { MuseumList } from './MuseumList';
 import { useQuery } from 'react-query';
+import { Review } from '../model/Review';
 
 const getUserById = async (id: string): Promise<any> => {
   const data = await fetch(`/api/users/${id}`);
@@ -102,14 +103,13 @@ const UserReviews = (props: { user: UserType }) => {
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {props.user.comment}
           </Typography>
-          {/* TODO */}
-          {/*<Stack direction="row" spacing={1}>*/}
-          {/*  {*/}
-          {/*    props.user.watchedMuseum.map((watchedMuseum) => (*/}
-          {/*      <Review user={props.user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />*/}
-          {/*    ))*/}
-          {/*  }*/}
-          {/*</Stack>*/}
+          <Stack direction="row" spacing={1}>
+            {
+              props.user.visits.map((visit: VisitType) => (
+                <Review visit={visit} key={visit.id} />
+              ))
+            }
+          </Stack>
         </CardContent>
       </Card>
     </Container>
