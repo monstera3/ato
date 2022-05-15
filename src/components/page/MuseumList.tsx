@@ -1,15 +1,21 @@
 import { Grid} from '@mui/material';
-import { getMuseums } from '../../data';
 import { MuseumCard } from '../model/MuseumCard';
 import { Link } from 'react-router-dom';
+import { useQuery } from 'react-query';
 
 export const MuseumList=()=> {
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('api/museums').then(res => res.json())
+  );
 
-  const museums = getMuseums();
+  if (isLoading) return <div>'Loading...'</div>
+
+  if (error) return <div>'An error has occurred'</div>
 
   return(
     <Grid container spacing={2} maxWidth="md" m="auto">
-      {museums.map((museum)=>(
+
+      {data.map((museum: any)=>(
         <Grid item xs={12} sm={6} md={6} lg={4} key={museum.id}>
           <Link to={'/museums/'+museum.id}>
             <MuseumCard museum={museum}/>
