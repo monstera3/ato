@@ -29,10 +29,10 @@ export const MuseumCard = (props:{ museum: MuseumType}) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div" >
-              {props.museum.museumName}
+              {props.museum.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {props.museum.access}
+              {props.museum.address}
             </Typography>
             <Stack direction="row" spacing={1}>
               <Chip label={props.museum.address} size="small" />

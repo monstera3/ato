@@ -30,7 +30,7 @@ export const ExhibitionCard = (props:{ exhibition: ExhibitionType}) => {
               {props.exhibition.exhibitionName}
             </Typography>
             <Stack direction="row" spacing={1}>
-              <Chip label={props.exhibition.museumName} size="small" />
+              <Chip label={props.exhibition.name} size="small" />
             </Stack>
             <Typography sx={{my:1}} variant="body2" color="text.secondary">
               {props.exhibition.season}
