@@ -31,12 +31,14 @@ export const MuseumCard = (props:{ museum: MuseumType}) => {
             <Typography gutterBottom variant="h5" component="div" >
               {props.museum.name}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {props.museum.address}
-            </Typography>
+            {/*TODO: accessを表示したい*/}
             <Stack direction="row" spacing={1}>
               <Chip label={props.museum.address} size="small" />
             </Stack>
+            <Typography variant="body2" color="text.secondary">
+              {props.museum.address}
+            </Typography>
+
           </CardContent>
         </CardActionArea>
         <CardActions>
