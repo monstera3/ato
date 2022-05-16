@@ -29,8 +29,8 @@ export const Review = (props: ReviewType) => {
           {/*</Link>*/}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          <Link to={'/users/'+props.user.id}>
-            {props.user.displayName}の感想
+          <Link to={'/users/'+props.user.ato_id}>
+            {props.user.name}の感想
           </Link>
 
         </Typography>

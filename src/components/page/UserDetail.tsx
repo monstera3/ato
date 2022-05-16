@@ -15,19 +15,35 @@ import { TabContext, TabList, TabPanel } from '@mui/lab';
 import React, { SyntheticEvent, useState } from 'react';
 import { ReviewCard } from './ReviewCard';
 import { MuseumList } from './MuseumList';
+import { useQuery } from 'react-query';
+
+const getUserById = async (id: string): Promise<any> => {
+  const data = await fetch(`/api/users/${id}`);
+  return data.json();
+}
+
+function useUser(userId: string) {
+  return useQuery(["userDetail", userId], () => getUserById(userId), {
+    enabled: !!userId,
+  });
+}
 
 export const UserDetail = () => {
   const params = useParams();
-  const user = getUser(params.userId ? params.userId : '')
+  const userId = params.userId ? params.userId : '';
   const [tabName, setTabName] = useState('userReviews');
+  const { status, data, error, isFetching } = useUser(userId);
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
     setTabName(newValue);
   };
+  if (!userId || status === "loading") return <div>'Loading...'</div>
+
+  if (error instanceof Error) return <div>'An error has occurred'</div>
 
   return (
     <>
-      <UserProfile user={user}/>
+      <UserProfile user={data}/>
       <TabContext value={tabName} >
         <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
           <Container maxWidth="md">
@@ -38,9 +54,9 @@ export const UserDetail = () => {
             </TabList>
           </Container>
         </Box>
-        <TabPanel value="userReviews"><UserReviews user={user} /></TabPanel>
-        <TabPanel value="userSaves"><UserSaves user={user} /></TabPanel>
-        <TabPanel value="userFollowings"><UserFollowings user={user} /></TabPanel>
+        <TabPanel value="userReviews"><UserReviews user={data} /></TabPanel>
+        <TabPanel value="userSaves"><UserSaves user={data} /></TabPanel>
+        <TabPanel value="userFollowings"><UserFollowings user={data} /></TabPanel>
       </TabContext>
     </>
   )
@@ -50,7 +66,7 @@ const UserSaves = (props: { user: UserType }) => {
 
   return (
     <Container maxWidth='md'>
-      UserSaves {props.user.id}
+      UserSaves {props.user.ato_id}
       <Box>
         <Typography>展覧会</Typography>
 
@@ -78,21 +94,21 @@ const UserReviews = (props: { user: UserType }) => {
       <Card sx={{ minWidth: 275 }}>
         <CardContent>
           <Typography variant="h5" component="div">
-            {props.user.displayName}
+            {props.user.ato_id}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {props.user.id}
+            {props.user.ato_id}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {props.user.comment}
           </Typography>
-          <Stack direction="row" spacing={1}>
-            {
-              props.user.watchedMuseum.map((watchedMuseum) => (
-                <Review user={props.user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />
-              ))
-            }
-          </Stack>
+          {/*<Stack direction="row" spacing={1}>*/}
+          {/*  {*/}
+          {/*    props.user.watchedMuseum.map((watchedMuseum) => (*/}
+          {/*      <Review user={props.user} museumId={watchedMuseum.museumId} key={watchedMuseum.museumId} />*/}
+          {/*    ))*/}
+          {/*  }*/}
+          {/*</Stack>*/}
         </CardContent>
       </Card>
     </Container>
@@ -107,7 +123,7 @@ const UserProfile = (props: { user: UserType }) => {
       <Container sx={{display:'flex' ,justifyContent:'space-between' ,alignItems:'flex-start'}} >
         <Box>
           <Typography component="div" variant="h5">
-            {props.user.displayName}
+            {props.user.name}
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
             コメント
