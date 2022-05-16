@@ -15,6 +15,9 @@ export const Review = (props: { visit: VisitType }) => {
 
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
+          訪問日: {props.visit.date}
+        </Typography>
+        <Typography sx={{ mb: 1.5 }} color="text.secondary">
           {props.visit.review.rating}/5
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
