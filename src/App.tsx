@@ -12,9 +12,14 @@ import { UserDetail } from './components/page/UserDetail';
 import { Toolbar } from '@mui/material';
 import { AuthProvider } from './context/AuthContext'
 import { ExhibitionDetail } from './components/page/ExhibitionDetail';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+
+const queryClient = new QueryClient();
 
 export const App=()=> {
   return (
+    <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <div className="App">
       <ResponsiveAppBar/>
@@ -37,5 +42,6 @@ export const App=()=> {
       </Routes>
       </div>
     </AuthProvider>
+    </QueryClientProvider>
   );
 };
