@@ -27,13 +27,13 @@ export const ExhibitionCard = (props:{ exhibition: ExhibitionType}) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h6" component="div">
-              {props.exhibition.exhibitionName}
+              {props.exhibition.name}
             </Typography>
             <Stack direction="row" spacing={1}>
-              <Chip label={props.exhibition.name} size="small" />
+              <Chip label={props.exhibition.museum.name} size="small" />
             </Stack>
             <Typography sx={{my:1}} variant="body2" color="text.secondary">
-              {props.exhibition.season}
+              {props.exhibition.from}〜{props.exhibition.to}
             </Typography>
           </CardContent>
         </CardActionArea>

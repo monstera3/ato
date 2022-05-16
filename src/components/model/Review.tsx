@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography } from '@mui/material';
-import { getMuseum, UserType, WatchedMuseumType } from '../../data';
+import { UserType, WatchedMuseumType } from '../../data';
 import { Link } from 'react-router-dom';
 
 type ReviewType = {
@@ -24,9 +24,9 @@ export const Review = (props: ReviewType) => {
     <Card sx={{ minWidth: 275 }}>
       <CardContent>
         <Typography variant="h5" component="div">
-          <Link to={'/museums/'+props.museumId}>
-            {getMuseum(props.museumId).name}
-          </Link>
+          {/*<Link to={'/museums/'+props.museumId}>*/}
+          {/*  {getMuseum(props.museumId).name}*/}
+          {/*</Link>*/}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           <Link to={'/users/'+props.user.id}>

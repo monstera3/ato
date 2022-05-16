@@ -19,16 +19,16 @@ import { MuseumList } from './MuseumList';
 export const UserDetail = () => {
   const params = useParams();
   const user = getUser(params.userId ? params.userId : '')
-  const [value, setValue] = useState('userReviews');
+  const [tabName, setTabName] = useState('userReviews');
 
   const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+    setTabName(newValue);
   };
 
   return (
     <>
       <UserProfile user={user}/>
-      <TabContext value={value} >
+      <TabContext value={tabName} >
         <Box sx={{ borderBottom: 1, borderColor: 'divider'}} >
           <Container maxWidth="md">
             <TabList onChange={handleChange}>
