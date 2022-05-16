@@ -4,7 +4,7 @@ import {
   Card,
   CardContent,
   Container,
-  Tab,
+  Tab,Stack,
   Typography
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
