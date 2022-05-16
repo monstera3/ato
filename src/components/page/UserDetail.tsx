@@ -4,13 +4,12 @@ import {
   Card,
   CardContent,
   Container,
-  Stack, Tab,
+  Tab,
   Typography
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import {  getUser, UserType } from '../../data';
+import {  UserType } from '../../data';
 import sampleImg from '../../assets/images/sample1.png'
-import { Review } from '../model/Review';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import React, { SyntheticEvent, useState } from 'react';
 import { ReviewCard } from './ReviewCard';
@@ -82,7 +81,7 @@ const UserSaves = (props: { user: UserType }) => {
 
 const UserFollowings = (props: { user: UserType }) => {
   return (
-    <div>UserFollowings {props.user.id}</div>
+    <div>UserFollowings {props.user.ato_id}</div>
   )
 }
 
@@ -102,6 +101,7 @@ const UserReviews = (props: { user: UserType }) => {
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
             {props.user.comment}
           </Typography>
+          {/* TODO */}
           {/*<Stack direction="row" spacing={1}>*/}
           {/*  {*/}
           {/*    props.user.watchedMuseum.map((watchedMuseum) => (*/}
