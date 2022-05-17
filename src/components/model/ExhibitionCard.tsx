@@ -17,7 +17,7 @@ import { ExhibitionType } from '../../data';
 export const ExhibitionCard = (props:{ exhibition: ExhibitionType}) => {
   return(
     <div>
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 445 }}>
         <CardActionArea>
           <CardMedia
             component="img"

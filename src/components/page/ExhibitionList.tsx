@@ -14,11 +14,11 @@ export const ExhibitionList=()=> {
   if (error) return <div>'An error has occurred'</div>
 
   return(
-    <Container sx={{ maxWidth: 'md',m:'auto'}}>
+    <Container maxWidth='md' sx={{ m:'auto'}}>
       <Typography>ExhibitionList</Typography>
       <Grid container spacing={2}>
         {data.map((exhibition: ExhibitionType)=>(
-          <Grid item xs={12} sm={6} md={4} lg={4} key={exhibition.id}>
+          <Grid item xs={12} sm={6} md={6} lg={6} key={exhibition.id}>
             <Link to={'/exhibitions/'+exhibition.id}>
               <ExhibitionCard exhibition={exhibition}/>
             </Link>
