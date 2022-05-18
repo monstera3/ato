@@ -49,6 +49,7 @@ export const UserDetail = () => {
           <Container maxWidth="md">
             <TabList onChange={handleChange}>
               <Tab label="投稿" value="userReviews" />
+              {/*TODO 保存が表示されない*/}
               <Tab label="保存" value="userSaves" />
               <Tab label="フォロー" value="userFollowings" />
             </TabList>
