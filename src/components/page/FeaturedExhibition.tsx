@@ -29,6 +29,7 @@ export const FeaturedExhibition=()=> {
             <Grid container spacing={2}>
               {data.map((exhibition: ExhibitionType)=>(
                 <Grid item xs={12} sm={6} md={4} lg={4} key={exhibition.id}>
+                  {/*TODO: クリックで展示会詳細にいきたい*/}
                   {/*<Link to={'/exhibitions/'+exhibition.id}>*/}
                     <ExhibitionCard exhibition={exhibition}/>
                   {/*</Link>*/}
