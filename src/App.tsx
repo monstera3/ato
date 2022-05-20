@@ -14,16 +14,30 @@ import { AuthProvider } from './context/AuthContext'
 import { ExhibitionDetail } from './components/page/ExhibitionDetail';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 
 const queryClient = new QueryClient();
 
 export const App=()=> {
+
+  const theme = createTheme({
+    palette: {
+      mode: 'light',
+      primary: {
+        main: '#d87274',
+        light: '#ffa2a3',
+        dark: '#a34449'
+      }
+    }
+  })
+
   return (
     <QueryClientProvider client={queryClient}>
-    <AuthProvider>
+      <ThemeProvider theme={theme}>
       {/*MUI が用意しているリセットCSS*/}
       <CssBaseline />
+    <AuthProvider>
       <div className="App">
       <ResponsiveAppBar/>
       <SearchBar/>
@@ -45,6 +59,7 @@ export const App=()=> {
       </Routes>
       </div>
     </AuthProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 };
