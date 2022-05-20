@@ -13,6 +13,7 @@ import { Toolbar } from '@mui/material';
 import { AuthProvider } from './context/AuthContext'
 import { ExhibitionDetail } from './components/page/ExhibitionDetail';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import CssBaseline from '@mui/material/CssBaseline'
 
 
 const queryClient = new QueryClient();
@@ -21,6 +22,8 @@ export const App=()=> {
   return (
     <QueryClientProvider client={queryClient}>
     <AuthProvider>
+      {/*MUI が用意しているリセットCSS*/}
+      <CssBaseline />
       <div className="App">
       <ResponsiveAppBar/>
       <SearchBar/>
